@@ -10,14 +10,15 @@ class SmurfForm extends React.Component {
             age:'',
             height:''
         }
-    }
+    };
 
     handleChange = e => {
         this.setState({
           ...this.state,
           [e.target.name]: e.target.value
         });
-      }
+    };
+
     handleSubmit = e => {
         e.preventDefault();
         const { name, age, height } = this.state;
@@ -27,35 +28,38 @@ class SmurfForm extends React.Component {
 
     render(){
       return (
-        <div>
-            <h1>Add Smurfs to Smurf Village</h1>
+        <div className="smurf_form">
+            <h1>Add A Smurf to Smurf Village</h1>
             <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange}
-              placeholder="Smurf name"
-              required
-            />
-            <input
-              type="text"
-              value={this.state.age}
-              onChange={this.handleChange}
-              placeholder="Smurf age"
-              required
-            />
-            <input
-              type="text"
-              value={this.state.height}
-              onChange={this.handleChange}
-              placeholder="Smurf height"
-              required
-            />
-            <button type="submit">Teleport Smurf to Village</button>
+                <input
+                  type="text"
+                  value={this.state.name}
+                  name="name"
+                  onChange={this.handleChange}
+                  placeholder="Smurf name"
+                  required
+                />
+                <input
+                  type="text"
+                  value={this.state.age}
+                  name="age"
+                  onChange={this.handleChange}
+                  placeholder="Smurf age"
+                  required
+                />
+                <input
+                  type="text"
+                  value={this.state.height}
+                  name="height"
+                  onChange={this.handleChange}
+                  placeholder="Smurf height"
+                  required
+                />
+                <button type="submit">Teleport Smurf to Village</button>
             </form>
         </div>
       )
-    }
+  }
 }
 
 const mapStateToProps = state => {
