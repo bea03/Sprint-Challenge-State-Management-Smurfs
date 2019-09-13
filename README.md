@@ -22,11 +22,16 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+- [X] What problem does the context API help solve?
+**It is useful when many components use data. Instead of threading the data through parent/children props, you use Context API to create a global place to retrieve data from**
+- [X] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+**Actions: tells the reducer how to change. Reducers: receive actions and then change state based on the action. Store: is where state is held**
+- [X] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+**Application state can be shared globally through the app and component state lives within the component and will only be used by that component**
+- [X] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+**Instead of returning an action, a thunk is a function that returns a function. The middleware intercepts the action-creators and determine if an action was returned or a thunk. If it is a thunk returned, then it is invoked**
+- [X] What is your favorite state management system you've learned and this sprint? Please explain why!
+**I think Context API was easiest to understand and I like to use that. I know that Redux is very popular and I should be using that.**
 
 ## Project Set Up
 
@@ -46,17 +51,17 @@ Follow these steps to set up your project:
 
 ## Minimum Viable Product
 
-- [ ] Plan and implement how you are going to manage your state for your application
-- [ ] You _must_ use either context or Redux as your state management system
-- [ ] Once you have planned out your state management system, fetch data from the smurf server
-- [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
+- [X] Plan and implement how you are going to manage your state for your application
+- [X] You _must_ use either context or Redux as your state management system
+- [X] Once you have planned out your state management system, fetch data from the smurf server
+- [X] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
 
 ## API documentation
 
 ### GET '/smurfs'
 
-- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
-- [ ] Double check that your response from the server is an array of smurfs.
+- [X] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
+- [X] Double check that your response from the server is an array of smurfs.
 
 ```js
 [
@@ -71,7 +76,7 @@ Follow these steps to set up your project:
 
 ### POST '/smurfs'
 
-- [ ] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
+- [X] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
 
 Example of the shape of data to be sent to the `POST` endpoint:
 
@@ -83,7 +88,7 @@ Example of the shape of data to be sent to the `POST` endpoint:
 }
 ```
 
-- [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
+- [X] Double check to make sure that a smurf is created correctly once your functionality is built out.
 
 Initially Brainey will be in the array, but it takes more than one smurf to make the village. Be sure to add a few smurfs to populate our smurf village.
 
