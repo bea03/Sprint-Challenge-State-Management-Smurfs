@@ -6,6 +6,11 @@ const SmurfVillage = ({ getSmurfs, smurfs, isFetching, error }) => {
   useEffect(() => {
     getSmurfs();
   }, [getSmurfs]);
+
+  if (isFetching) {
+    return <h3>Teleporting to Village</h3>;
+  }
+  
   return (
     <div className='smurf_village'>
       {smurfs.map(smurf => {

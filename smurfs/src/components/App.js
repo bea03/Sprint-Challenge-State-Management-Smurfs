@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 
+import SmurfVillage from "./SmurfsVillage.js";
+
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-        <h1>Le Pays Maudit</h1>
+        <h1>Smurf Village</h1>
+        <SmurfVillage />
 
       </div>
     );
