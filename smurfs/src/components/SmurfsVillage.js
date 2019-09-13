@@ -10,15 +10,15 @@ const SmurfVillage = ({ getSmurfs, smurfs, isFetching, error }) => {
   if (isFetching) {
     return <h3>Teleporting to Village</h3>;
   }
-  
+
   return (
     <div className='smurf_village'>
       {smurfs.map(smurf => {
         return (
           <div className='smurf_card' key={smurf.id}>
               <h2>{smurf.name}</h2>
-              <h3>{smurf.age}</h3>
-              <h3>{smurf.height}</h3>
+              <h3>Age: {smurf.age}</h3>
+              <h3>Height: {smurf.height}</h3>
           </div>
         )
       })}

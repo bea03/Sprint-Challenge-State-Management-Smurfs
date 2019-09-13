@@ -15,3 +15,18 @@ export const getSmurfs = () => dispatch => {
       dispatch({ type: FETCHING_SMURFS_FAILURE, payload: err });
     });
 };
+
+export const TELEPORT_SMURF = "TELEPORT_SMURF";
+export const teleportSmurf = (index) => dispatch => {
+  dispatch({type: TELEPORT_SMURF})
+  axios
+    .post(`http://localhost:3333/smurfs`, index)
+    .then(res => {
+      console.log("smurf fetch",res);
+      dispatch({ type: FETCHING_SMURFS_SUCCESS, payload: res.data });
+      return true;
+    })
+    .catch(err => {
+      dispatch({ type: FETCHING_SMURFS_FAILURE, payload: err });
+    });
+};
